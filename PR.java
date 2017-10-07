@@ -8,9 +8,10 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class PR{
-
+    private  int [] scores = new int[5];
+    
     public static void main(String[] args) {
-        
+         int [] scores = new int[5];
         //Frame Creation
         JFrame TFrame = new JFrame("Test Text For Test Frame");
        
@@ -19,6 +20,14 @@ public class PR{
         TFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         TFrame.setLocationRelativeTo(null);
        
+        scores[0] = 0;
+        scores[1] = 0;
+        scores[2] = 0;
+        scores[3] = 0;
+        scores[4] = 0;
+       
+       
+        
         
         
         //Title
@@ -42,17 +51,40 @@ public class PR{
         
         
         */
-        
+        TFrame.remove(LPanel);
+        TFrame.remove(PPanel);
         //Next Screen
-        
+        HS(TFrame, scores);
         
         
     }
-    public static void HS(JFrame f){
+    public static void HS(JFrame f, int[]s){
+        
         JLabel Header = new JLabel("HIGHSCORES");
         Header.setFont(new Font("Papyrus", Font.PLAIN, 30));
-        
+        Header.setHorizontalAlignment(JLabel.CENTER);
         JPanel ScoreList = new JPanel();
+        ScoreList.setBackground(Color.orange);
+        JLabel Score1 = new JLabel(String.valueOf(s[0]));
+        Score1.setHorizontalAlignment(JLabel.CENTER);
+        JLabel Score2 = new JLabel(String.valueOf(s[1]));
+        Score2.setHorizontalAlignment(JLabel.CENTER);
+        JLabel Score3 = new JLabel(String.valueOf(s[2]));
+        Score3.setHorizontalAlignment(JLabel.CENTER);
+        JLabel Score4 = new JLabel(String.valueOf(s[3]));
+        Score4.setHorizontalAlignment(JLabel.CENTER);
+        JLabel Score5 = new JLabel(String.valueOf(s[4]));
+        Score5.setHorizontalAlignment(JLabel.CENTER);
+        
+        
+        ScoreList.setLayout(new GridLayout(6,0));
+        ScoreList.add(Header);
+        ScoreList.add(Score1);
+        ScoreList.add(Score2);
+        ScoreList.add(Score3);
+        ScoreList.add(Score4);
+        ScoreList.add(Score5);
+        f.add(ScoreList);
        
     }
     public static void mainMenu(JFrame f){
@@ -143,6 +175,24 @@ public class PR{
         p.add(b);
     }
     
+    public static void scoreKeeper(int current, int[]board, JFrame f){
+        int replace = 999;
+        for (int i = 0; i < board.length; i++){
+            if(board[i] > current)
+            {
+                break;
+            }
+            else
+            {
+                replace = i;
+            }
+        }
+        if(replace != 999)
+        {
+            board[replace] = current;
+        }
+        mainMenu(f);
+    }
     
     
 }
