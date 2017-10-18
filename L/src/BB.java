@@ -38,6 +38,9 @@ public class BB extends JPanel implements ActionListener{
         l.setVisible(false);
         add(l);
         
+        JButton r = new JButton();
+        
+        
         
     }
     
@@ -103,19 +106,23 @@ public class BB extends JPanel implements ActionListener{
         BSup(gb, green, 20, 200, "w");
         BSup(pb, purple, 400,180, "Right");
         
+        
     }
     
     public void cleanUp(){
         
     }
     public void LvTwo(){
+        removeAll();
+        revalidate();
+        repaint();
+        System.out.println("All removed");
         BSup(bb, blue, 75, 80, "w");
         BSup(rb, red, 100, 205, "w");
         BSup(yb, yellow, 25, 275, "w");
         BSup(gb, green, 405, 98, "w");
         BSup(pb, purple, 200,100, "w");
-        revalidate();
-        repaint();
+        
         
         
     }
@@ -126,8 +133,7 @@ public class BB extends JPanel implements ActionListener{
                 if(e.getActionCommand().equals("Right")){
                 l.setText("Correct");
                 l.setVisible(true);
-                revalidate();
-                repaint();
+                LvTwo();
                 }
     }
     

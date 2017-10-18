@@ -6,7 +6,15 @@
 
 
 import java.awt.Dimension;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  *
@@ -14,18 +22,12 @@ import javax.swing.JFrame;
  */
 public class L {
 public static void main(String[] args) {
-        JFrame j = new JFrame();
-        j.setPreferredSize(new Dimension(600,400));
-        j.setSize(j.getPreferredSize());
-        j.setVisible(true);
-        j.setLocationRelativeTo(null);
-        j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        BB i = new BB();
         
-        j.add(i);
-        
+        Stp i = new Stp();
+        i.set();
         
        
     }
     
+
 }
