@@ -3,19 +3,48 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class Board{
+public class Board extends JPanel{
 
    int [][]userAnswer = new int[9][9];
    JPanel boardPanel = new JPanel();
    
-   JFrame Wind = new JFrame();
+   JFrame Wind = new JFrame("Sudoku");
+   
    public void windSet(){
         Wind.setSize(600, 400);
         Wind.setDefaultCloseOperation(EXIT_ON_CLOSE);
         Wind.setLocationRelativeTo(null);
         Wind.setVisible(true);
+        
+        Wind.setFocusable(true);
+        Wind.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+            @Override
+            public void keyPressed(KeyEvent ke) {
+                if(ke.getKeyCode() == KeyEvent.VK_ESCAPE)
+                {
+                    System.exit(0);
+                }//To change body of generated methods, choose Tools | Templates.
+                if(ke.getKeyCode() == KeyEvent.VK_F1)
+                {
+                    JOptionPane.showMessageDialog(Wind, "James : BRONCO_ID \n" + "Jorge : BRONCO_ID \n" + "Jacob Kim : 010500230 \n" + "SUDOKU PROJECT -- Fall 2017\n");
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+        });
+        
    }
    
    public void setup(){
