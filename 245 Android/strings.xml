@@ -1,0 +1,30 @@
+
+<resources>
+<string name="app_name">GeoQuiz</string>string>
+
+<string name="question_text">
+    Playin\' them video games?
+</string>
+
+<string name="true_button">True
+</string>
+
+<string name="false_button">False
+</string>
+
+<string name="correct_toast">Correct!
+</string>
+
+<string name="incorrect_toast">Incorrect
+</string>
+
+<string name="match">It\'s a match!
+</string>
+
+<string name="NoMatch">It\'s not a match!
+</string>
+
+<string name="win">You Win!
+</string>
+
+</resources>
